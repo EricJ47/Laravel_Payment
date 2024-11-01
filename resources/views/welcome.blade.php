@@ -56,13 +56,19 @@
                                 </form>
                             </div>
                             <div class="col-md-4 my-2">
-                                <form action="" method="POST">
+                                <form action="{{route('razorpay.payment')}}" method="POST">
                                     @csrf
-                                    <script src="https://checkout.razorpay.com/v1/checkout.js" data-key="{{ config('razorpay.key') }}"
-                                        data-amount="{{ 40 * 100 }}" data-buttontext="Pay With Razorpay" data-name="test payment"
-                                        data-description="Payment" data-prefill.name="user" data-prefill.email="user@gmail.com" data-theme.color="#ff7529">
+                                    <script src="https://checkout.razorpay.com/v1/checkout.js"
+                                            data-key="{{config('razorpay.key')}}"
+                                            data-amount="{{ 40 * 100}}"
+                                            data-buttontext="Pay With Razorpay"
+                                            data-name="test payment"
+                                            data-description="Payment"
+                                            data-prefill.name="user"
+                                            data-prefill.email="user@gmail.com"
+                                            data-theme.color="#ff7529">
                                     </script>
-                                </form>
+                               </form>
                             </div>
                             <div class="col-md-4 my-2">
                                 <a href="" type="submit"
