@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Gatewas;
+namespace App\Http\Controllers\Gateways;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;

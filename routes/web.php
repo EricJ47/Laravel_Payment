@@ -3,6 +3,7 @@
 use App\Http\Controllers\Gateways\PaypalController;
 use App\Http\Controllers\gateways\RazorPayController;
 use App\Http\Controllers\Gateways\StripeController;
+use App\Http\Controllers\Gateways\TwoCheckoutController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,3 +38,8 @@ Route::get('stripe/cancel', [StripeController::class,'cancel'])->name('stripe.ca
 Route::post('razorpay/payment', [RazorPayController::class,'payment'])->name('razorpay.payment');
 Route::get('razorpay/success', [RazorPayController::class,'success'])->name('razorpay.success');
 Route::get('razorpay/cancel', [RazorPayController::class,'cancel'])->name('razorpay.cancel');
+
+// twocheckout payment
+Route::get('twocheckout/payment', [TwoCheckoutController::class, 'showForm'])->name('twocheckout.payment');
+Route::post('twocheckout/handle-payment', [TwoCheckoutController::class, 'handlePayment'])->name('twocheckout.handle-payment');
+Route::get('twocheckout/success', [TwoCheckoutController::class, 'success'])->name('twocheckout.success');
