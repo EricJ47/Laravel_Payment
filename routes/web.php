@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Gateways\MollieController;
 use App\Http\Controllers\Gateways\PaypalController;
 use App\Http\Controllers\gateways\RazorPayController;
 use App\Http\Controllers\Gateways\StripeController;
@@ -43,3 +44,7 @@ Route::get('razorpay/cancel', [RazorPayController::class,'cancel'])->name('razor
 Route::get('twocheckout/payment', [TwoCheckoutController::class, 'showForm'])->name('twocheckout.payment');
 Route::post('twocheckout/handle-payment', [TwoCheckoutController::class, 'handlePayment'])->name('twocheckout.handle-payment');
 Route::get('twocheckout/success', [TwoCheckoutController::class, 'success'])->name('twocheckout.success');
+
+// mollie payment
+Route::post('mollie/payment', [MollieController::class, 'payment'])->name('mollie.payment');
+Route::get('mollie/success', [MollieController::class, 'success'])->name('mollie.success');
