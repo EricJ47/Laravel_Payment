@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Gateways\MollieController;
 use App\Http\Controllers\Gateways\PaypalController;
+use App\Http\Controllers\gateways\PaystackController;
 use App\Http\Controllers\gateways\RazorPayController;
 use App\Http\Controllers\Gateways\StripeController;
 use App\Http\Controllers\Gateways\TwoCheckoutController;
@@ -48,3 +49,7 @@ Route::get('twocheckout/success', [TwoCheckoutController::class, 'success'])->na
 // mollie payment
 Route::post('mollie/payment', [MollieController::class, 'payment'])->name('mollie.payment');
 Route::get('mollie/success', [MollieController::class, 'success'])->name('mollie.success');
+
+// paystack payment
+Route::get('paystack/redirect', [PaystackController::class, 'redirectToGateway'])->name('paystack.redirect');
+Route::get('paystack/callback', [PaystackController::class, 'verifyTransaction'])->name('paystack.callback');
